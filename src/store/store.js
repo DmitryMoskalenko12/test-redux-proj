@@ -1,5 +1,8 @@
-import { createStore } from "@reduxjs/toolkit";
+import { createStore, combineReducers } from "@reduxjs/toolkit";
+import heroes from "../redusers/heroes";
 
-const store = createStore()
+const store = createStore(
+combineReducers({heroes})
+)
 
 export default store;

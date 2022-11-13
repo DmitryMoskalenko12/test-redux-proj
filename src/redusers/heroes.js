@@ -15,13 +15,19 @@ const heroes = (state = initialState, action) =>{
         heroes: action.payload,
         fetching: 'loaded'
       }
-    case 'HEROES__FETCHING__ERROR':
+    case 'HEROES__DELETED':
       return{
         ...state,
-        heroes: action.payload,
-        fetching: 'error'
+        heroes: state.heroes.filter(item => item.id !== action.payload),
+        fetching: 'loaded'
       } 
-  
+    case 'HERO__CREATED':
+      const newItem = [...state.heroes, action.payload]
+      return{
+        ...state,
+        heroes: newItem,
+        fetching: 'loaded'
+      } 
     default:
       return state
   }

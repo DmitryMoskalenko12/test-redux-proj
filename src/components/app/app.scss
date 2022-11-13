@@ -1,6 +1,15 @@
 .App{
-  width: 1140px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  height: 100vh;
+  overflow-y: scroll;
   
+}
+.content {
+  display: grid;
+  grid-template-columns: 400px 440px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-top: 50px;
+  &__interactive {
+      padding-left: 40px;
+  }
 }

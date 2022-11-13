@@ -1,14 +1,19 @@
-import './App.css';
+import './app.scss';
 import store from '../../store/store';
 import { Provider } from 'react-redux';
 import HeroesList from '../heroesList/HeroesList';
-import './app';
+import HeroesForm from '../heroesForm/HeroesForm';
 
 function App() {
   return (
     <Provider store = {store}>
      <div className="App">
-       <HeroesList/>
+      <div className="content">
+      <HeroesList/>
+      <div className="interactive__content">
+        <HeroesForm/>
+      </div>
+      </div>
      </div>
     </Provider>
   );
