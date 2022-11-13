@@ -1,0 +1,50 @@
+{
+"heroes":[
+  {
+    "name": "First hero",
+    "element": "fire",
+    "description": "ehthrthrthrt",
+    "id": 1
+  },
+  {
+    "name": "Second hero",
+    "element": "water",
+    "description": "lorem ipsum",
+    "id": 2
+  },
+  {
+    "name": "Third hero",
+    "element": "wind",
+    "description": "jjjjj",
+    "id": 3
+  }
+],
+
+"filters":[
+  {
+    "id": "all",
+    "filter": "all",
+    "lable": "Всі" 
+  },
+  {
+    "id": "fire",
+    "filter": "fire",
+    "lable": "Вогонь"
+  },
+  {
+    "id": "water",
+    "filter": "water",
+    "lable": "Вода"
+  },
+  {
+    "id": "wind",
+    "filter": "wind",
+    "lable": "Вітер"
+  },
+  {
+    "id": "earth",
+    "filter": "earth",
+    "lable": "Земля"
+  }
+]
+}
