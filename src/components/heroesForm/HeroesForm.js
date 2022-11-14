@@ -39,7 +39,7 @@ request('http://localhost:3001/heroes', 'POST', JSON.stringify(newItem))
     <form onSubmit={(e) => onCreate(e)} className="form">
       <div className="form__nameinp">
         <div className="form__name">Имя нового героя</div>
-        <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="form__inp" />
+        <input required value={name} onChange={(e) => setName(e.target.value)} type="text" className="form__inp" />
       </div>
 
       <div className="form__textarea">
@@ -49,7 +49,7 @@ request('http://localhost:3001/heroes', 'POST', JSON.stringify(newItem))
 
       <div className="form__select">
         <div className="form__choise">Выбрать элемент героя</div>
-        <select value={element} onChange={(e) => setElement(e.target.value)} name="select" className="form__list">
+        <select required value={element} onChange={(e) => setElement(e.target.value)} name="select" className="form__list">
           <option value="all">Я владею элементом</option>
           <option value="fire">Огонь</option>
           <option value="wind">Ветер</option>

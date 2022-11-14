@@ -3,6 +3,7 @@ import store from '../../store/store';
 import { Provider } from 'react-redux';
 import HeroesList from '../heroesList/HeroesList';
 import HeroesForm from '../heroesForm/HeroesForm';
+import HeroesFilters from '../heroeesFilters/HeroesFilters';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <HeroesList/>
       <div className="interactive__content">
         <HeroesForm/>
+        <HeroesFilters/>
       </div>
       </div>
      </div>
