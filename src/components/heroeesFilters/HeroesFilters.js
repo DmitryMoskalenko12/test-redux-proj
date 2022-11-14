@@ -23,7 +23,7 @@ useEffect(() => {
       <div className="filters__butwrap">
         {
           filters.map(({id, filter, lable}) => {
-            return <button key={id} onClick = {() => dispatch(activeFilter(filter))} className="filters__but">{lable}</button> 
+            return <button key={id} onClick = {() => dispatch(activeFilter(filter))} className={`filters__but ${filter}`}>{lable}</button> 
           })
         }
       </div>

@@ -28,6 +28,11 @@ const heroes = (state = initialState, action) =>{
         heroes: newItem,
         fetching: 'loaded'
       } 
+    case 'HEROES__FETCHING__ERROR':
+      return{
+        ...state,
+        fetching: 'error'
+      }   
     default:
       return state
   }

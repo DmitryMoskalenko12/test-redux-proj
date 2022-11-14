@@ -20,7 +20,7 @@ const result = createSelector(
     } 
   }
 )
-
+const loadingRes = useSelector(state => state.heroes.fetching);
 const heroesData = useSelector(result);
 const dispatch = useDispatch();
 
@@ -37,6 +37,13 @@ const onDelete = (id) =>{
   .then(() => dispatch(heroesDeleted(id)))
   .catch(() => dispatch(heroesFetchingError()))
 
+}
+
+if (loadingRes === 'loading') {
+  return <div style ={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading</div>
+}
+if (loadingRes === 'error') {
+  return <div style ={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Error</div>
 }
   return(
       <div className="heroeslist">
