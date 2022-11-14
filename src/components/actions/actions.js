@@ -1,4 +1,4 @@
-export const heroesFetching = () => {
+/* export const heroesFetching = () => {
   return {
     type: 'HEROES__FETCHING'
   }
@@ -29,7 +29,7 @@ export const heroCreated = (hero) => {
     type: 'HERO__CREATED',
     payload: hero
   }
-}
+} */
 
 export const filtersFetching = () => {
   return {

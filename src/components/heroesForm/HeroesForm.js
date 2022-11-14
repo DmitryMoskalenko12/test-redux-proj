@@ -1,7 +1,7 @@
 import './heroesForm.scss';
 import { useState } from 'react';
 import useHttp from '../../hooks/http.hook';
-import { heroCreated, heroesFetching, heroesFetchingError } from '../actions/actions';
+import { heroesCreated, heroesFetching, heroesFetchingError } from '../heroesList/heroesSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const HeroesForm = () =>{
@@ -26,7 +26,7 @@ const onCreate = (e) =>{
  dispatch(heroesFetching())
 request('http://localhost:3001/heroes', 'POST', JSON.stringify(newItem))
 .then((res) => {
-  dispatch(heroCreated(res));
+  dispatch(heroesCreated(res));
   setName('')
   setDescr('')
   setElement('')

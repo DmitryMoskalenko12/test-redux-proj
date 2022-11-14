@@ -3,7 +3,7 @@ import HeroesItems from '../heroesItems/HeroesItems';
 import useHttp from '../../hooks/http.hook';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { heroesFetching, heroesFetched, heroesFetchingError, heroesDeleted } from '../actions/actions';
+import { heroesFetching, heroesFetched, heroesFetchingError, heroesDeleted } from './heroesSlice';
 import { createSelector } from '@reduxjs/toolkit';
 
 const HeroesList = () =>{

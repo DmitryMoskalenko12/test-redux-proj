@@ -1,4 +1,4 @@
-const initialState = {
+/* const initialState = {
   heroes: [],
   fetchig: 'idle'
 }
@@ -37,4 +37,4 @@ const heroes = (state = initialState, action) =>{
       return state
   }
 }
-export default heroes;
+export default heroes; */

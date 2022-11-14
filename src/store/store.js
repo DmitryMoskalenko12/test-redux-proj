@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
-import heroes from "../redusers/heroes";
+import heroes from "../components/heroesList/heroesSlice";
 import filters from "../redusers/filters";
 
 const stringMiddleware = () => (next) => (action) =>{
