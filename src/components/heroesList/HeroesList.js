@@ -3,7 +3,7 @@ import HeroesItems from '../heroesItems/HeroesItems';
 import useHttp from '../../hooks/http.hook';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { heroesFetching, heroesFetched, heroesFetchingError, heroesDeleted } from './heroesSlice';
+import {heroesFetch, heroesDeleted } from './heroesSlice';
 import { createSelector } from '@reduxjs/toolkit';
 
 const HeroesList = () =>{
@@ -25,17 +25,13 @@ const heroesData = useSelector(result);
 const dispatch = useDispatch();
 
 useEffect(() =>{
-  dispatch(heroesFetching());
-  request('http://localhost:3001/heroes')
-  .then((heroes) => dispatch(heroesFetched(heroes)))
-  .catch(() => dispatch(heroesFetchingError())
-  )
+  dispatch(heroesFetch())
 },[])
 
 const onDelete = (id) =>{
   request(`http://localhost:3001/heroes/${id}`,'DELETE')
   .then(() => dispatch(heroesDeleted(id)))
-  .catch(() => dispatch(heroesFetchingError()))
+  .catch((err) => console.log(err))
 
 }
 

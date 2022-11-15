@@ -1,7 +1,7 @@
 import './heroesFilters.scss';
 import useHttp from '../../hooks/http.hook';
 import { useEffect } from 'react';
-import { filtersFetching, filtersFetched, filtersFetchingError, activeFilter } from '../actions/actions';
+import { filtersFetching, filtersFetched, filtersFetchingError, activeFilter } from './filtersSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const HeroesFilters = () =>{

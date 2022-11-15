@@ -1,24 +1,6 @@
 {
   "heroes": [
     {
-      "name": "Third hero",
-      "element": "wind",
-      "description": "jjjjj",
-      "id": 3
-    },
-    {
-      "name": "rnynt",
-      "descr": "yjtyjtyj",
-      "element": "earth",
-      "id": 1668447320979
-    },
-    {
-      "name": "ntyntyn",
-      "descr": "tyntyn",
-      "element": "fire",
-      "id": 1668457911684
-    },
-    {
       "name": "gghrh",
       "descr": "hyhth",
       "element": "water",
@@ -29,6 +11,18 @@
       "descr": "fhfh",
       "element": "wind",
       "id": 1668465552582
+    },
+    {
+      "name": "ffnfn",
+      "descr": "hnyn",
+      "element": "fire",
+      "id": 1668530671822
+    },
+    {
+      "name": "rjrj",
+      "descr": "jyjtyj",
+      "element": "fire",
+      "id": 1668533729133
     }
   ],
   "filters": [
