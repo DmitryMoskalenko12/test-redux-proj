@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import useHttp from "../../hooks/http.hook";
 
 export const heroesFetch = createAsyncThunk(
-  'filters/fetch',
+  'heroes/fetch',
     () =>{
     const {request} = useHttp()
     return request('http://localhost:3001/heroes')
@@ -45,9 +45,6 @@ const heroes = createSlice({
  const {reducer, actions} = heroes;
 
 export const {
-  heroesFetching,
-  heroesFetched,
-  heroesFetchingError,
   heroesDeleted,
   heroesCreated} = actions;
 export default reducer;
