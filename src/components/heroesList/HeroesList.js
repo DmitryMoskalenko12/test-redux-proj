@@ -4,22 +4,11 @@ import useHttp from '../../hooks/http.hook';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import {heroesFetch, heroesDeleted } from './heroesSlice';
-import { createSelector } from '@reduxjs/toolkit';
+import { result } from './heroesSlice';
 
 const HeroesList = () =>{
 const {request} = useHttp();
 
-const result = createSelector(
-  state => state.heroes.heroes,
-  state => state.filters.activeFilter,
-  (heroes, filters) =>{
-    if (filters === 'all') {
-      return heroes
-    }else {
-     return heroes.filter(item => item.element === filters)
-    } 
-  }
-)
 const loadingRes = useSelector(state => state.heroes.fetching);
 const heroesData = useSelector(result);
 const dispatch = useDispatch();
