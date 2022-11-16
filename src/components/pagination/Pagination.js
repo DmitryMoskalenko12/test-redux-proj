@@ -12,6 +12,7 @@ const postData = async () =>{
   return res
 } 
 
+
 const getData = async () =>{
   const res = await postData()
   setData(res.data)
@@ -32,11 +33,16 @@ for (let i = 0; i < resPage; i++) {
 
 useEffect(() => {
 getData()
-},[page])
+},[page, limit])
 
 
 return(
   <div className="post">
+    <select onChange={(e) => {setLimit(e.target.value)}} value=''>
+      <option disabled value="">Change limit</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+    </select>
    {
     data.map(({id, title, body}) =>{
       return(
@@ -48,13 +54,13 @@ return(
     })
    }
    <div className="butwrap">
-    <button onClick={() => {getData(); setPage(page <= 1 ? 1 : page - 1)}} >Prev</button>
+    <button onClick={() => {setPage( page <= 1 ? 1 : page - 1 )}} >Prev</button>
    {
     pageArr.map((item, i) =>{
       return <button className={item === page ? 'btn active': 'btn'} onClick={() => {getData(); setPage(item)}} key={i}>{item}</button>
     })
    }
-   <button  onClick={() => {getData(); setPage(page >= 10 ? 10 : page + 1)}}>Next</button>
+   <button  onClick={() => {setPage(limit == 5 ? page >= 20 ? 20 : page + 1 : page >= 10 ? 10 : page + 1)}}>Next</button>
    </div>
   </div>
   
