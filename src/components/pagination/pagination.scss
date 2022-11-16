@@ -1,0 +1,14 @@
+.post{
+  &__wrap{
+    width: 800px;
+    border: 1px solid grey;
+  }
+}
+.btn{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.btn.active{
+  border: 2px solid red;
+}

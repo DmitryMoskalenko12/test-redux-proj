@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './pagination.scss'
 const Pagination = () => { 
 const [data, setData] = useState([])
 const [totalCount, setTotalCount] = useState(0)
@@ -48,11 +48,13 @@ return(
     })
    }
    <div className="butwrap">
+    <button onClick={() => {getData(); setPage(page <= 1 ? 1 : page - 1)}} >Prev</button>
    {
     pageArr.map((item, i) =>{
-      return <button onClick={() => {getData(); setPage(item)}} key={i} className='but'>{item}</button>
+      return <button className={item === page ? 'btn active': 'btn'} onClick={() => {getData(); setPage(item)}} key={i}>{item}</button>
     })
    }
+   <button  onClick={() => {getData(); setPage(page >= 10 ? 10 : page + 1)}}>Next</button>
    </div>
   </div>
   
