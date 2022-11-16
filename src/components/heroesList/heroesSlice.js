@@ -12,22 +12,15 @@ export const heroesFetch = createAsyncThunk(
   }
 )
 
-/* const initialState = {
-  heroes: [],
-  fetching: 'idle'
-} */
-
 const heroes = createSlice({
  name: 'heroes',
  initialState,
  reducers:{
   heroesDeleted: (state, action) => {
-   /*  state.heroes = state.heroes.filter(item => item.id !== action.payload) */
    entityAdapter.removeOne(state, action.payload)
   },
   heroesCreated: (state, action) => {
    entityAdapter.addOne(state, action.payload)
-    /* state.heroes.push(action.payload) */
     state.fetching = 'loaded'
   }
  },
@@ -38,8 +31,7 @@ const heroes = createSlice({
   })
   .addCase(heroesFetch.fulfilled, (state, action) => {
      entityAdapter.setAll(state, action.payload)
-    /* state.heroes = action.payload; */
-    state.fetching = 'loaded'
+     state.fetching = 'loaded'
    })
   .addCase(heroesFetch.rejected, state => {
     state.fetching = 'error'
@@ -52,7 +44,7 @@ const heroes = createSlice({
  const {selectAll} = entityAdapter.getSelectors(state => state.heroes)
 
  export const result = createSelector(
-  /* state => state.heroes.heroes */ selectAll,
+  selectAll, /* автоматически стейт приходит и селектолл видит его */
   state => state.filters.activeFilter,
   (heroes, filters) =>{
     if (filters === 'all') {

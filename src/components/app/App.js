@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import HeroesList from '../heroesList/HeroesList';
 import HeroesForm from '../heroesForm/HeroesForm';
 import HeroesFilters from '../heroeesFilters/HeroesFilters';
+import Pagination from '../pagination/Pagination';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <HeroesFilters/>
       </div>
       </div>
+      <Pagination/>
      </div>
     </Provider>
   );

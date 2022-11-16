@@ -2,9 +2,10 @@ import './heroesFilters.scss';
 import { useEffect } from 'react';
 import { filtersFetch, activeFilter } from './filtersSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectAll } from './filtersSlice';
 
 const HeroesFilters = () =>{
-const filters = useSelector(state => state.filters.filters);
+const filters = useSelector(state => selectAll(state));
 const dispatch = useDispatch();
 
 useEffect(() => {
